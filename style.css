@@ -4,45 +4,47 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  color: white;
   font-family: "Inter";
-}
-
-header {
-  position: relative;
-  background-position: center center;
-  background-size: cover;
-  background-attachment: fixed;
-  height: 100vh;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-    url("hero.jpg");
+  color: white;
 }
 
 section {
-  max-width: 1280px;
-  margin: 0 auto;
-  height: 90vh;
+  background-image: url("/hero.jpg");
+  background-size: cover;
+  background-position: right 40% center;
+  height: 100vh;
+  background-repeat: no-repeat;
+  display: grid;
+  grid-template-rows: 50px 1fr;
 }
 
 nav {
   display: flex;
   justify-content: space-between;
-  font-weight: 700;
-  font-size: 20px;
-  padding-top: 20px;
+  padding: 10px;
+  margin: 1rem 1.6rem;
 }
 
-body {
-  background-color: black;
+#nav-link {
+  display: none;
+}
+
+#hamburger {
+  height: 100%;
+}
+
+.line {
+  width: 26px;
+  height: 3px;
+  margin-bottom: 5px;
+  background-color: white;
 }
 
 .hero-text {
-  width: 700px;
-  height: 80vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
+  text-align: center;
+  align-self: center;
+  letter-spacing: 0.4px;
+  line-height: 1.2;
 }
 
 .hero-text h2 {
@@ -50,16 +52,77 @@ body {
 }
 
 .hero-text p {
-  width: 550px;
-  margin: 30px 0;
+  font-size: 0.9rem;
+  margin-top: 10px;
+  margin-bottom: 30px;
 }
 
 button {
-  background-color: rgb(255, 140, 32);
-  border: 1px solid orange;
-  border-radius: 3px;
+  background-color: rgb(255, 136, 0);
+  border: none;
   padding: 10px;
-  font-weight: 600;
-  font-size: 18px;
-  box-shadow: 0px -1px 13px 1px #000000;
+  font-weight: 700;
+  font-size: 1.1rem;
+  border-radius: 3px;
+}
+
+@media (min-width: 600px) {
+  .hero-text {
+    text-align: center;
+    align-self: center;
+    letter-spacing: 0.4px;
+    line-height: 1.2;
+    width: 100%;
+  }
+
+  .hero-text h2 {
+    font-size: 3rem;
+  }
+
+  .hero-text p {
+    align-self: center;
+    font-size: 1rem;
+    width: 60ch;
+    margin: auto;
+  }
+}
+
+@media (min-width: 800px) {
+  #hamburger {
+    display: none;
+  }
+  #nav-link {
+    display: initial;
+  }
+}
+
+@media (min-width: 1000px) {
+  nav {
+    padding: 10px;
+    margin: 3rem 10rem;
+  }
+
+  nav p:first-child {
+    font-size: 1.5rem;
+  }
+
+  nav p:nth-child(2) {
+    font-size: 1rem;
+  }
+
+  .hero-text h2 {
+    font-size: 4rem;
+  }
+
+  .hero-text p {
+    margin-top: 20px;
+    margin-bottom: 30px;
+    font-size: 1.2rem;
+    line-height: 1.5;
+    letter-spacing: 1.1px;
+  }
+
+  button {
+    margin-top: 20px;
+  }
 }
